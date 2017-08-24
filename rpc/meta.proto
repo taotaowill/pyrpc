@@ -1,0 +1,9 @@
+syntax = "proto2";
+package pyrpc.rpc;
+
+message RpcMeta {
+    required string sequence_id = 1;
+    optional string method = 2;
+    optional int32 error_code = 4;
+    optional string error_text = 5;
+}

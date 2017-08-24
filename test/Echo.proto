@@ -1,4 +1,5 @@
-package pyrpc.proto;
+syntax = "proto2";
+package pyrpc.test;
 
 option py_generic_services = true;
 
@@ -12,4 +13,15 @@ message EchoResponse {
 
 service EchoService {
     rpc Echo(EchoRequest) returns(EchoResponse);
+}
+
+message SumRequest {
+    repeated int64 nums = 1;
+}
+
+message SumResponse {
+    required int64 sum = 1;
+}
+service SumService {
+    rpc Count(SumRequest) returns(SumResponse);
 }
